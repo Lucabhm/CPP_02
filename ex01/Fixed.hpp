@@ -6,7 +6,7 @@
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 17:24:10 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/23 17:26:27 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/07/24 17:05:56 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,20 @@ class	Fixed
 {
 	private:
 		int					value;
-		static const int	bits = 8;
+		static const int	fractional = 8;
 	public:
 		Fixed();
+		Fixed(const int value);
 		Fixed(const Fixed &cpy);
+		Fixed(const float value);
 		~Fixed();
-		void operator = (Fixed &cpy);
+		Fixed	&operator= (const Fixed &cpy);
+		int toInt( void ) const;
+		float toFloat( void ) const;
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 };
+
+std::ostream	&operator<< (std::ostream &stream, const Fixed &test);
 
 #endif
