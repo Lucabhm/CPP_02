@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/23 17:24:10 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/25 14:41:34 by lbohm            ###   ########.fr       */
+/*   Created: 2024/07/25 11:44:32 by lbohm             #+#    #+#             */
+/*   Updated: 2024/07/25 16:45:20 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,28 @@ class	Fixed
 		Fixed(const float value);
 		~Fixed();
 		Fixed	&operator= (const Fixed &cpy);
-		int toInt( void ) const;
-		float toFloat( void ) const;
-		int getRawBits( void ) const;
-		void setRawBits( int const raw );
+		bool	operator> (const Fixed &cmp);
+		bool	operator< (const Fixed &cmp);
+		bool	operator>= (const Fixed &cmp);
+		bool	operator<= (const Fixed &cmp);
+		bool	operator== (const Fixed &cmp);
+		bool	operator!= (const Fixed &cmp);
+		Fixed	operator* (const Fixed &cmp);
+		Fixed	operator/ (const Fixed &cmp);
+		Fixed	operator+ (const Fixed &cmp);
+		Fixed	operator- (const Fixed &cmp);
+		Fixed	&operator++ ();
+		Fixed	operator++ (int value);
+		Fixed	&operator-- ();
+		Fixed	operator-- (int value);
+		int		toInt( void ) const;
+		float	toFloat( void ) const;
+		int		getRawBits( void ) const;
+		void	setRawBits( int const raw );
+		static Fixed	&min(Fixed &s1, Fixed&s2);
+		static const Fixed	&min(const Fixed &s1, const Fixed&s2);
+		static Fixed	&max(Fixed &s1, Fixed&s2);
+		static const Fixed	&max(const Fixed &s1, const Fixed&s2);
 };
 
 std::ostream	&operator<< (std::ostream &stream, const Fixed &test);

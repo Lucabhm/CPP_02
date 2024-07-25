@@ -6,13 +6,13 @@
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 12:39:57 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/23 17:21:28 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/07/25 13:28:35 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main( void )
+int main(void)
 {
 	Fixed a;
 	Fixed b( a );

@@ -6,7 +6,7 @@
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 17:24:08 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/24 17:44:44 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/07/25 14:42:02 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ Fixed::Fixed(const Fixed &cpy)
 Fixed::Fixed(const int value)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->value = value;
+	this->value = (value * int(1 << fractional));
 }
 
 Fixed::Fixed(const float value)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->value = value;
+	this->value = std::roundf((value * float(1 << fractional)));
 }
 
 // Destructor
@@ -59,12 +59,12 @@ void	Fixed::setRawBits(int const raw)
 
 int	Fixed::toInt(void)const
 {
-	return (value);
+	return (value / int(1 << fractional));
 }
 
 float	Fixed::toFloat(void)const
 {
-	return (value);
+	return (value / float(1 << fractional));
 }
 
 // Operators
@@ -79,6 +79,6 @@ Fixed	&Fixed::operator= (const Fixed &cpy)
 
 std::ostream	&operator<< (std::ostream &stream, const Fixed &test)
 {
-	stream << test.getRawBits();
+	stream << test.toFloat();
 	return (stream);
 }

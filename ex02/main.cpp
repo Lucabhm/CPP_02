@@ -5,28 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/23 17:24:14 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/25 14:55:47 by lbohm            ###   ########.fr       */
+/*   Created: 2024/07/25 11:44:35 by lbohm             #+#    #+#             */
+/*   Updated: 2024/07/25 16:50:20 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int	main(void)
+int	main( void )
 {
 	Fixed a;
-	Fixed const b(10);
-	Fixed const c(42.42f);
-	Fixed const d(b);
+	Fixed const b(Fixed(5.05f) * Fixed(2));
 
-	a = Fixed(1234.4321f);
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max(a, b) << std::endl;
+
+	if (a > b)
+		std::cout << "a is bigger" << "a: " << a.getRawBits() << " b: " << b.getRawBits() << std::endl;
+	else
+		std::cout << "b ist bigger " << "a: " << a.getRawBits() << " b: " << b.getRawBits() << std::endl;
 	return 0;
 }
