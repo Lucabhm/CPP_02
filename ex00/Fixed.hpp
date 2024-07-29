@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lbohm <lbohm@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 12:39:55 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/24 17:06:01 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/07/29 10:50:00 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class	Fixed
 		Fixed(const Fixed &cpy);
 		~Fixed();
 		Fixed	&operator = (const Fixed &cpy);
-		int	getRawBits( void ) const;
-		void	setRawBits( int const raw );
+		int	getRawBits(void) const;
+		void	setRawBits(int const raw);
 };
 
 #endif

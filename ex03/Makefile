@@ -2,7 +2,9 @@ NAME = fixed
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 SRCS = main.cpp \
-		Fixed.cpp
+		Fixed.cpp \
+		bsp.cpp \
+		Point.cpp
 OBJSDIR = objs/
 OBJS = $(addprefix $(OBJSDIR), $(SRCS:.cpp=.o))
 
