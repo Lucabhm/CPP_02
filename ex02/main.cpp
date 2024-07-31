@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lbohm <lbohm@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 11:44:35 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/26 10:38:46 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/07/31 09:05:34 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,5 @@ int	main( void )
 	std::cout << a << std::endl;
 	std::cout << a-- << std::endl;
 	std::cout << a << std::endl;
-	
 	return 0;
 }
