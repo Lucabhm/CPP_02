@@ -6,7 +6,7 @@
 /*   By: lbohm <lbohm@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 11:44:30 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/31 09:14:09 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/07/31 12:57:35 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,24 @@ Fixed::Fixed(const Fixed &cpy)
 
 Fixed::Fixed(const int value)
 {
-	this->value = (value * int(1 << fractional));
+	if (value <= (1 << 23) && value >= -1 * (1 << 23))
+		this->value = (value * int(1 << fractional));
+	else
+	{
+		std::cout << "Number will overflow" << std::endl;
+		std::exit(1);
+	}
 }
 
 Fixed::Fixed(const float value)
 {
-	this->value = std::roundf((value * float(1 << fractional)));
+	if (value <= (1 << 23) && value >= -1 * (1 << 23))
+		this->value = std::roundf((value * float(1 << fractional)));
+	else
+	{
+		std::cerr << "Number will overflow" << std::endl;
+		std::exit(1);
+	}
 }
 
 // Destructor

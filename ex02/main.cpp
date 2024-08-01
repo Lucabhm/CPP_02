@@ -6,7 +6,7 @@
 /*   By: lbohm <lbohm@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 11:44:35 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/31 09:05:34 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/07/31 12:52:25 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main( void )
 {
-	Fixed a;
+	Fixed a(1);
 	Fixed const b(Fixed(5.05f) * Fixed(2));
 
 	std::cout << a << std::endl;
