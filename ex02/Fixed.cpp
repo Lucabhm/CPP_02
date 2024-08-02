@@ -6,7 +6,7 @@
 /*   By: lbohm <lbohm@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 11:44:30 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/31 12:57:35 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/08/02 07:38:58 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Fixed::Fixed(const int value)
 
 Fixed::Fixed(const float value)
 {
-	if (value <= (1 << 23) && value >= -1 * (1 << 23))
+	if (value <= (3.40282347e+38F / float(1 << fractional)) && value >= (-3.40282347e+38F / float(1 << fractional)))
 		this->value = std::roundf((value * float(1 << fractional)));
 	else
 	{
